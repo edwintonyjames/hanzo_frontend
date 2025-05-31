@@ -270,6 +270,12 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   object-position: center center;
   border-radius: 5px;
 }
+.featuredSection__project__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
 .featuredSection__project__content {
   position: absolute;
   opacity: 0;
@@ -351,9 +357,14 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 }
 
 .getInTouch {
-  padding: 250px 250px;
+  padding: 250px 0px;
   justify-content: center;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .getInTouch {
+    display: none;
+  }
 }
 .getInTouch .sectionTitle {
   font-size: 4.2rem;
@@ -385,6 +396,29 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 .footer-section {
   background: #111111;
   padding: 150px 0px 0px 0px;
+}
+.footer-section ul li {
+  list-style: none;
+}
+.footer-section .social-list {
+  margin-top: 2rem;
+}
+.footer-section .social-list ul {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex;
+  gap: 30px;
+}
+.footer-section h4 {
+  font-size: 1.7rem;
+}
+.footer-section p {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.footer-section span {
+  font-size: 1rem;
+  opacity: 1;
 }
 .footer-section .footer-logo img {
   width: 150px;
