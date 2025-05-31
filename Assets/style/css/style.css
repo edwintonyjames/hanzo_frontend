@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "Futura PT Book";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Futura PT Book"), url("../../fonts/futura-pt/FuturaCyrillicBook.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura PT Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Futura PT Light"), url("../../fonts/futura-pt/FuturaCyrillicLight.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura PT Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Futura PT Medium"), url("../../fonts/futura-pt/FuturaCyrillicMedium.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura PT Demi";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Futura PT Demi"), url("../../fonts/futura-pt/FuturaCyrillicDemi.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura PT Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Futura PT Heavy"), url("../../fonts/futura-pt/FuturaCyrillicHeavy.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura PT Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Futura PT Bold"), url("../../fonts/futura-pt/FuturaCyrillicBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Futura PT Extra Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Futura PT Extra Bold"), url("../../fonts/futura-pt/FuturaCyrillicExtraBold.woff") format("woff");
+}
+/**
+ * Breakpoint Mixins
+ *
+ * 1. media-breakpoint-up($name) - applies styles for the given breakpoint and up
+ * 2. media-breakpoint-down($name) - applies styles for the given breakpoint and down
+ * 3. media-breakpoint-only($name) - applies styles for the given breakpoint only
+ * 
+ * Example Usage:
+ *  @include media-breakpoint-up(md) {
+ *     // styles for medium breakpoint and up
+ *  }
+ *  @include media-breakpoint-down(sm) {
+ *     // styles for small breakpoint and down
+ *  }
+ *  @include media-breakpoint-only(lg) {
+ *     // styles for large breakpoint only
+ *  }
+ * 
+ * @param {string} $name - the breakpoint name (xs, sm, md, lg, xl)
+ * @param {map} $breakpoints - the breakpoints map (optional)
+ */
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover, a:active, a:focus {
+  color: unset;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  overflow: auto;
+  font-family: Futura PT Light;
+  background: #000000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 28px;
+  font-size: 1rem;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+
+nav {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9215686275), transparent);
+}
+nav .navbar-nav li a {
+  font-family: "Futura PT Book", "Futura", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: right;
+  text-transform: uppercase;
+}
+nav .navbar-toggler {
+  background-color: transparent;
+  border: none;
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  border: none !important;
+  background: none !important;
+}
+nav .navbar-toggler .line {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+nav .navbar-toggler .line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+nav .navbar-toggler .line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+nav .navbar-toggler .line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+nav .navbar-toggler.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+nav .navbar-toggler.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+nav .navbar-toggler.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.sectionTitle {
+  font-family: "Futura PT Book", "Futura", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  width: fit-content;
+  text-transform: capitalize;
+}
+.sectionTitle.underline::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 2.5px;
+  background: #fff;
+  margin-top: 10px;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.heroSection {
+  /* Custom styles */
+}
+.heroSection_videoSlide {
+  width: 100%;
+  height: 100vh;
+}
+.heroSection_videoSlide__playbutton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.heroSection_videoSlide__playbutton svg {
+  transition: all 0.2s ease-in-out;
+}
+.heroSection_videoSlide__playbutton:hover svg {
+  transform: scale(0.9);
+}
+.heroSection_videoSlide__playbutton:active svg {
+  transform: rotate(10deg);
+}
+.heroSection_videoSlide__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.heroSection_videoSlide__overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.heroSection_videoSlide iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.featuredSection {
+  padding: 120px 0px;
+}
+.featuredSection__masonry {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+}
+@media (max-width: 768px) {
+  .featuredSection__masonry {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+@media (max-width: 576px) {
+  .featuredSection__masonry {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+.featuredSection__project {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.featuredSection__project.tall {
+  grid-row: span 2;
+}
+.featuredSection__project.nowPlaying {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.featuredSection__project.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.featuredSection__project__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 5px;
+}
+.featuredSection__project__content {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.latestNews {
+  padding: 120px 0px;
+}
+.latestNews__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  grid-auto-flow: dense;
+  justify-content: center;
+  align-items: center;
+}
+.latestNews__item {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.latestNews__item__image {
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+.latestNews__item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.latestNews__item__content {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  color: #fff;
+  text-align: left;
+  margin-top: 15px;
+}
+.latestNews__item__content__date {
+  font-size: 16px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+}
+.latestNews__item__content__title {
+  font-size: 18px;
+  line-height: 28px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+.getInTouch {
+  padding: 250px 250px;
+  justify-content: center;
+  text-align: center;
+}
+.getInTouch .sectionTitle {
+  font-size: 4.2rem;
+}
+.getInTouch p {
+  color: #fff;
+  width: 60%;
+  opacity: 0.8;
+}
+
+.button-contact {
+  font-size: 1rem;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem 1.8rem;
+  color: #fff;
+  border: solid 1px #fff;
+  transition: all 0.2s ease-in-out;
+}
+.button-contact:hover, .button-contact:active, .button-contact:focus {
+  background: rgba(255, 255, 255, 0.123);
+  color: #fff;
+}
+
+.footer-section {
+  background: #111111;
+  padding: 150px 0px 0px 0px;
+}
+.footer-section .footer-logo img {
+  width: 150px;
+}
+.footer-section .footer-logo p {
+  opacity: 0.8;
+  font-size: 0.8rem !important;
+  line-height: 20px;
+  width: 70%;
+}
+.footer-section .additional_links ul li {
+  list-style: none;
+  color: #fff;
+  opacity: 0.8;
+}
+.footer-section .additional_links ul li a {
+  color: #fff;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+.footer-section .additional_links ul li a:hover, .footer-section .additional_links ul li a:active, .footer-section .additional_links ul li a:focus {
+  opacity: 1;
+}
+.footer-section .quick-links ul li {
+  list-style: none;
+  color: #fff;
+  opacity: 0.8;
+}
+.footer-section .quick-links ul li a {
+  color: #fff;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+.footer-section .quick-links ul li a:hover, .footer-section .quick-links ul li a:active, .footer-section .quick-links ul li a:focus {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */

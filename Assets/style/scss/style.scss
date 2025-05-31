@@ -1,0 +1,412 @@
+@use '_fonts';
+@use '_responsive';
+
+
+// Variables
+$primary-color: #000000;
+$secondary-color: #fff;
+$text-color: #fff;
+$accent-color: #e50914;
+$footer-bg: #111111;
+$navbar-bg: #000000eb;
+$navbar-link-color: #fff;
+$navbar-link-hover: $accent-color;
+$font-family-base: Futura PT Light;
+$transition-fast: 0.2s;
+$hamburger-width: 30px;
+$hamburger-height: 3px;
+$hamburger-gap: 6px;
+$section-padding:120px 0px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a{
+  text-decoration: none;
+  color: $text-color;
+  &:hover,
+  &:active,
+  &:focus{
+    color:unset;
+  }
+}
+button{
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+@mixin transition($props...) {
+  transition: $props;
+}
+
+// Base styles
+body {
+  overflow: auto;
+  font-family: $font-family-base;
+  background: $primary-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+p{
+  line-height: 28px;
+  font-size: 1rem;
+  @include fonts.font-secondary;
+}
+nav{
+ 
+    .navbar-nav{
+        li a { 
+        @include fonts.font-navbar;
+        }
+    } 
+   
+    background: linear-gradient(to bottom, $navbar-bg, transparent);
+    .navbar-toggler{
+        
+        background-color: transparent;
+        border: none;
+        width: 60px;
+        height: auto;
+        cursor: pointer;
+        display: flex;
+        padding: 0;
+        .line {
+            fill: none;
+            stroke: white;
+            stroke-width: 6;
+            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .line1 {
+            stroke-dasharray: 60 207;
+            stroke-width: 6;
+          }
+          .line2 {
+            stroke-dasharray: 60 60;
+            stroke-width: 6;
+          }
+          .line3 {
+            stroke-dasharray: 60 207;
+            stroke-width: 6;
+          }
+          &.opened .line1 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+          }
+          &.opened .line2 {
+            stroke-dasharray: 1 60;
+            stroke-dashoffset: -30;
+            stroke-width: 6;
+          }
+          &.opened .line3 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+          }
+          
+  
+      
+        border: none !important;
+        background: none !important;
+    // Active and hover state for navbar toggler: no borders, no background
+    &:hover,
+    &:active,
+    &:focus {
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+    }
+}
+.sectionTitle{
+  @include fonts.sectionTitle;
+  margin-bottom: 60px;
+  width: fit-content;
+  text-transform: capitalize;
+  &.underline{
+    &::after{
+      content: '';
+    display: block;
+    width: 30%;
+    height: 2.5px;
+    background: $secondary-color;
+    margin-top: 10px;
+    }
+  }
+}
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.heroSection{
+//embla carousel 
+ /* Custom styles */
+ 
+
+
+  &_videoSlide{
+    width: 100%;
+    height: 100vh;
+    &__playbutton{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      svg{
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover svg{
+        transform: scale(0.9);
+      }
+      &:active svg{
+        transform: rotate(10deg);
+      }
+    }
+    &__overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
+
+
+.featuredSection{
+    padding: $section-padding;
+    &__masonry{
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-auto-rows: 300px;
+      grid-auto-flow: dense;
+      @include responsive.media-breakpoint-down(md) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+      @include responsive.media-breakpoint-down(sm) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+    &__project{
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &.tall{
+        grid-row: span 2;
+      }
+      &.nowPlaying{
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      &.big{
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 5px;
+      }
+      &__content{
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $text-color;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    
+} 
+
+.latestNews{
+    padding: $section-padding;
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        grid-column-gap: 25px;
+        grid-row-gap: 25px;
+        grid-auto-flow: dense;
+        justify-content: center;
+        align-items: center;
+    }
+    &__item{
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $text-color;
+        text-align: center;
+        position: relative;
+    }
+    &__item__image{
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+    }
+    &__item__content{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        color: $text-color;
+        text-align: left;
+        margin-top: 15px;
+    }
+    &__item__content__date{
+        font-size: 16px;
+        @include fonts.font-secondary;
+        font-weight: 500;
+        line-height: normal;
+        color: $text-color;
+    }
+    &__item__content__title{
+        font-size: 18px;
+        line-height: 28px;
+        @include fonts.font-secondary;
+        font-weight: 400;
+        color: $text-color;
+    }
+}
+
+.getInTouch{
+    padding: 250px 250px;
+    justify-content: center;
+    text-align: center;
+    .sectionTitle{
+       font-size: 4.2rem;
+    }
+    p{
+      color: $text-color;
+      width: 60%;
+      opacity: 0.8;
+    }
+}
+
+.button-contact{
+    font-size: 1rem;
+    @include fonts.font-secondary;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem 1.8rem;
+    color: $secondary-color;
+    border: solid 1px $secondary-color;
+    @include transition(all 0.2s ease-in-out);
+    &:hover,
+    &:active,
+    &:focus{
+        background: rgba(255, 255, 255, 0.123);
+        color: $secondary-color;
+    }
+}
+
+.footer-section{
+    background: $footer-bg;
+    padding: 150px 0px 0px 0px;
+    .footer-logo{
+        img{
+            width: 150px;
+        }
+        p{
+          opacity: 0.8;
+          font-size: 0.8rem !important;
+          line-height: 20px;
+          width: 70%;
+        }
+    }
+
+
+    .additional_links{
+      ul li{
+        list-style: none;
+        color: $text-color;
+        opacity: 0.8;
+        a{
+          color: $text-color;
+          opacity: 0.8;
+          @include transition(all 0.2s ease-in-out);
+          &:hover,
+          &:active,
+          &:focus{  
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .quick-links{
+      ul li{
+        list-style: none;
+        color: $text-color;
+        opacity: 0.8;
+        a{
+          color: $text-color;
+          opacity: 0.8;
+          @include transition(all 0.2s ease-in-out);
+          &:hover,
+          &:active,
+          &:focus{  
+            opacity: 1;
+          }
+        }
+      }
+    }
+}
+
+

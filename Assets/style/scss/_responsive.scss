@@ -1,0 +1,52 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $breakpoints) {
+  $max: map-get($breakpoints, $name);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+/**
+ * Breakpoint Mixins
+ *
+ * 1. media-breakpoint-up($name) - applies styles for the given breakpoint and up
+ * 2. media-breakpoint-down($name) - applies styles for the given breakpoint and down
+ * 3. media-breakpoint-only($name) - applies styles for the given breakpoint only
+ * 
+ * Example Usage:
+ *  @include media-breakpoint-up(md) {
+ *     // styles for medium breakpoint and up
+ *  }
+ *  @include media-breakpoint-down(sm) {
+ *     // styles for small breakpoint and down
+ *  }
+ *  @include media-breakpoint-only(lg) {
+ *     // styles for large breakpoint only
+ *  }
+ * 
+ * @param {string} $name - the breakpoint name (xs, sm, md, lg, xl)
+ * @param {map} $breakpoints - the breakpoints map (optional)
+ */

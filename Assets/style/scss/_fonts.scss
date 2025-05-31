@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'Futura PT Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Book'), url('../../fonts/futura-pt/FuturaCyrillicBook.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Light'), url('../../fonts/futura-pt/FuturaCyrillicLight.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Medium'), url('../../fonts/futura-pt/FuturaCyrillicMedium.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Demi';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Demi'), url('../../fonts/futura-pt/FuturaCyrillicDemi.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Heavy'), url('../../fonts/futura-pt/FuturaCyrillicHeavy.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Bold'), url('../../fonts/futura-pt/FuturaCyrillicBold.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Extra Bold'), url('../../fonts/futura-pt/FuturaCyrillicExtraBold.woff') format('woff');
+    }
+
+    
+
+// Override base font family to use Montserrat (Futura alternative)
+$font-family-base: 'Futura PT Book', 'Futura', 'Arial', sans-serif;
+$font-family-secondary: 'Montserrat', 'Arial', sans-serif;
+@mixin font-navbar{
+    font-family: $font-family-base;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: right;
+    text-transform: uppercase; 
+}
+@mixin sectionTitle{
+    font-family: $font-family-base;
+    font-weight: 500;
+    font-size: 3.5rem;
+    text-transform: uppercase; 
+}
+@mixin font-secondary{
+    font-family: $font-family-secondary;
+}
+
