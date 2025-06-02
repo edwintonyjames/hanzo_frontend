@@ -75,4 +75,11 @@ $font-family-secondary: 'Montserrat', 'Arial', sans-serif;
 @mixin font-secondary{
     font-family: $font-family-secondary;
 }
+@mixin font-featured{
+    font-family: $font-family-secondary;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: normal;
+}
+
 
