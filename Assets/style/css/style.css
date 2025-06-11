@@ -95,6 +95,42 @@ p {
 nav {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9215686275), transparent);
 }
+nav .nav-item {
+  display: flex;
+  justify-content: right;
+  gap: 1.3rem;
+  align-items: baseline;
+  position: relative;
+}
+nav .nav-item::after {
+  transition: all 300ms ease;
+  display: flex;
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 3px;
+  background: #fff;
+}
+nav .nav-item:hover::after, nav .nav-item:active::after, nav .nav-item:focus::after {
+  transition: all 300ms ease;
+  display: flex;
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+}
+nav .nav-link {
+  position: relative;
+  color: #fff;
+}
+nav .nav-link:hover, nav .nav-link:active, nav .nav-link:focus {
+  color: #fff !important;
+}
 nav .navbar-nav li a {
   font-family: "Futura PT Book", "Futura", "Arial", sans-serif;
   font-weight: 500;

@@ -10,7 +10,6 @@ $accent-color: #e50914;
 $footer-bg: #111111;
 $navbar-bg: #000000eb;
 $navbar-link-color: #fff;
-$navbar-link-hover: $accent-color;
 $font-family-base: Futura PT Light;
 $transition-fast: 0.2s;
 $hamburger-width: 30px;
@@ -60,6 +59,51 @@ p{
   @include fonts.font-secondary;
 }
 nav{
+  .nav-item{
+    display: flex;
+    justify-content: right;
+    gap: 1.3rem          ;
+    align-items: baseline;
+    position: relative;
+    &::after{
+      transition: all 300ms ease;
+      display: flex;
+      content: '';
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 0px;
+      height: 3px;
+      background: $secondary-color;
+    }
+    &:hover,
+    &:active,
+    &:focus{
+     
+      &::after{
+        transition: all 300ms ease;
+        display: flex;
+        content: '';
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 3px;
+        background: $secondary-color;
+      }
+    }
+   
+  }
+  .nav-link{
+    position: relative;
+    color: $navbar-link-color;
+    &:hover,
+    &:active,
+    &:focus{
+     
+      color:$secondary-color !important;
+    }
+  }
  
     .navbar-nav{
         li a { 
