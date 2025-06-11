@@ -535,7 +535,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   object-position: center center;
 }
 .featuredProjectsAll__project__content {
-  opacity: 0;
+  opacity: 1;
   z-index: 2;
   position: absolute;
   width: 100%;
@@ -552,13 +552,26 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   z-index: 3;
   position: relative;
 }
+.featuredProjectsAll__project__content h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: all 0.4s ease-in-out;
+}
 .featuredProjectsAll__project:hover img {
   transform: scale(1.1);
 }
 .featuredProjectsAll__project:hover .featuredProjectsAll__project__content {
   opacity: 1;
 }
-.featuredProjectsAll__project:hover .featuredProjectsAll__project__content::before {
+.featuredProjectsAll__project:hover .featuredProjectsAll__project__content h3::after {
+  width: 100%;
+}
+.featuredProjectsAll__project::before {
   content: "";
   position: absolute;
   top: 0;
