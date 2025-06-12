@@ -87,6 +87,17 @@
 .hnz-btn:hover svg, .hnz-btn:active svg, .hnz-btn:focus svg {
   transform: scale(120%);
 }
+.hnz-btn--outline {
+  border: solid 1px #fff;
+  color: #fff;
+}
+.hnz-btn--outline:hover, .hnz-btn--outline:active, .hnz-btn--outline:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.hnz-btn--outline:hover svg, .hnz-btn--outline:active svg, .hnz-btn--outline:focus svg {
+  transform: scale(120%);
+}
 .hnz-btn--gototop {
   position: fixed;
   bottom: 2rem;
@@ -145,6 +156,33 @@ p {
   line-height: 28px;
   font-size: 1rem;
   font-family: "Montserrat", "Arial", sans-serif;
+}
+
+.swiper-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 0rem 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.swiper button {
+  transition: all 0.2s ease-in-out;
+  padding: 20px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.swiper button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.swiper button:hover svg {
+  transform: scale(120%);
 }
 
 nav {

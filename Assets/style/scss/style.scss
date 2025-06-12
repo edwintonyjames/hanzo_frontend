@@ -55,6 +55,20 @@ $section-padding:120px 0px;
       transform: scale(120%);
     }
   }
+  &--outline{
+    border: solid 1px $text-color;
+    color: $text-color;
+    &:hover,
+    &:active,
+    &:focus{
+      background: rgba($text-color, 0.1);
+      color: $text-color;
+      
+      svg{
+        transform: scale(120%);
+      }
+    }
+  }
   &--gototop{
     position: fixed;
     bottom: 2rem;
@@ -140,6 +154,34 @@ p{
   line-height: 28px;
   font-size: 1rem;
   @include fonts.font-secondary;
+}
+.swiper{
+  &-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 0rem 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  button{
+    @include transition(all 0.2s ease-in-out);
+    padding: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    &:hover{
+      background: rgba($text-color, 0.1);
+      color: $text-color;
+      svg{
+        transform: scale(120%);
+      }
+    }
+  }
 }
 nav{
   .nav-item{
