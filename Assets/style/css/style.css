@@ -67,7 +67,7 @@
   padding: 10px 20px;
   text-transform: uppercase;
   width: fit-content;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   border-radius: 5px;
   border-radius: 0;
   display: flex;
@@ -803,7 +803,10 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   gap: 30px;
 }
 .footer-section h4 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Arial", sans-serif;
 }
 .footer-section p {
   font-size: 0.8rem;
@@ -815,6 +818,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 }
 .footer-section .footer-logo img {
   width: 150px;
+  margin-bottom: 1rem;
 }
 .footer-section .footer-logo p {
   opacity: 0.8;
@@ -838,6 +842,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 .footer-section .quick-links ul li {
   list-style: none;
   color: #fff;
+  font-size: 1rem;
   opacity: 0.8;
 }
 .footer-section .quick-links ul li a {
