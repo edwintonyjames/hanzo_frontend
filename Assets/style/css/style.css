@@ -73,7 +73,6 @@
   align-items: center;
   border-radius: 24px;
   line-height: normal;
-  border: solid 1px #fff;
   color: #fff;
   gap: 8px;
   font-size: 1rem;
@@ -92,6 +91,7 @@
   position: fixed;
   bottom: 2rem;
   opacity: 0;
+  border: solid 1px #fff;
   display: none;
   height: 45px;
   width: 45px;
@@ -286,11 +286,19 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   height: 100vh;
 }
 .heroSection_videoSlide__playbutton {
+  opacity: 0;
+  display: none;
+  transition: all 0.2s ease-in-out;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+.heroSection_videoSlide__playbutton.paused {
+  opacity: 1;
+  display: block;
+  transition: all 0.2s ease-in-out;
 }
 .heroSection_videoSlide__playbutton svg {
   transition: all 0.2s ease-in-out;
@@ -317,6 +325,8 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 .heroSection_videoSlide iframe {
   width: 100%;
   height: 100%;
+  pointer-events: none !important;
+  cursor: none;
 }
 
 .featuredSection {
@@ -405,7 +415,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 }
 .latestNews__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   grid-column-gap: 35px;
   grid-row-gap: 35px;
   grid-auto-flow: dense;

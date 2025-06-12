@@ -29,3 +29,67 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll('.heroSection_videoSlide');
+  
+    slides.forEach(slide => {
+      const iframe = slide.querySelector('.heroSection_videoSlide__iframe');
+      const playBtn = slide.querySelector('.heroSection_videoSlide__playbutton');
+      const player = new Vimeo.Player(iframe);
+  
+      slide.addEventListener('click', (event) => {
+        event.stopPropagation();
+        player.play();
+       
+      });
+  
+      let isPlaying = false;
+      const togglePlay = () => {
+        isPlaying ? player.pause() : player.play();
+        isPlaying = !isPlaying;
+        playBtn.classList.toggle('paused');
+      };
+  
+      player.on('play', () => (isPlaying = true));
+      player.on('pause', () => (isPlaying = false));
+  
+      slide.addEventListener('click', togglePlay);
+
+     
+    });
+  });
+
+
+  //videoplay pause 
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('[data-iframe][data-playbtn]').forEach(container => {
+      const iframeSelector = container.getAttribute('data-iframe');
+      const playBtnSelector = container.getAttribute('data-playbtn');
+  
+      const iframe = container.querySelector(iframeSelector);
+      const playBtn = container.querySelector(playBtnSelector);
+      
+      if (!iframe || !playBtn) return;
+  
+      const player = new Vimeo.Player(iframe);
+      let isPlaying = false;
+   
+      const togglePlay = () => {
+        isPlaying ? player.pause() : player.play();
+        isPlaying = !isPlaying;
+        playBtn.classList.toggle('paused');
+      };
+  
+      player.on('play', () => { isPlaying = true; });
+      player.on('pause', () => { isPlaying = false; });
+  
+      container.addEventListener('click', (e) => {
+        e.stopPropagation();
+        togglePlay();
+      });
+    });
+  });
+
+  
