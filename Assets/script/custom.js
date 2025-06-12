@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const toggleVisibility = () => {
           if (window.scrollY > 500) {
             backToTopBtn.style.opacity = "1";
-            backToTopBtn.style.display = "block";
+            backToTopBtn.style.display = "flex";
           } else {
             backToTopBtn.style.opacity = "0";
             backToTopBtn.style.display = "none";
