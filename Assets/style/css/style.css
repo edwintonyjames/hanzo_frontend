@@ -65,7 +65,9 @@
 .hnz-btn {
   transition: all 0.2s ease-in-out;
   padding: 10px 20px;
+  text-transform: uppercase;
   width: fit-content;
+  letter-spacing: 4px;
   border-radius: 5px;
   border-radius: 0;
   display: flex;
@@ -75,7 +77,7 @@
   line-height: normal;
   color: #fff;
   gap: 8px;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .hnz-btn svg {
   transition: all 0.2s ease-in-out;
@@ -284,13 +286,13 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 .sectionTitle {
   font-family: "Futura PT Book", "Futura", "Arial", sans-serif;
   font-weight: 500;
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-transform: uppercase;
   margin-bottom: 60px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .sectionTitle.underline::after {
   content: "";
@@ -603,7 +605,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   margin: 0;
   font-family: "Futura PT Book", "Futura", "Arial", sans-serif;
   font-weight: 500;
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-transform: uppercase;
 }
 
