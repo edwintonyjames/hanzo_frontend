@@ -282,7 +282,30 @@ nav{
   flex: 0 0 100%;
   min-width: 0;
 }
-
+.playbutton{
+  opacity: 0;
+  display: none;
+  transition: all 0.2s ease-in-out;
+  &.paused{
+    opacity: 1;
+    display: block;
+    transition: all 0.2s ease-in-out;
+  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  svg{
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover svg{
+    transform: scale(0.9);
+  }
+  &:active svg{
+    transform: rotate(10deg);
+  }
+}
 .heroSection{
 //embla carousel 
  /* Custom styles */
@@ -293,30 +316,7 @@ nav{
     width: 100%;
     cursor: pointer;
     height: 100vh;
-    &__playbutton{
-      opacity: 0;
-      display: none;
-      transition: all 0.2s ease-in-out;
-      &.paused{
-        opacity: 1;
-        display: block;
-        transition: all 0.2s ease-in-out;
-      }
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      svg{
-        transition: all 0.2s ease-in-out;
-      }
-      &:hover svg{
-        transform: scale(0.9);
-      }
-      &:active svg{
-        transform: rotate(10deg);
-      }
-    }
+   
     &__overlay{
       position: absolute;
       top: 0;
@@ -355,7 +355,9 @@ nav{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
     }
+   
     &__project{
+     
       position: relative;
       overflow: hidden;
       display: flex;

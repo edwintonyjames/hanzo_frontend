@@ -277,15 +277,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   min-width: 0;
 }
 
-.heroSection {
-  /* Custom styles */
-}
-.heroSection_videoSlide {
-  width: 100%;
-  cursor: pointer;
-  height: 100vh;
-}
-.heroSection_videoSlide__playbutton {
+.playbutton {
   opacity: 0;
   display: none;
   transition: all 0.2s ease-in-out;
@@ -295,19 +287,28 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-.heroSection_videoSlide__playbutton.paused {
+.playbutton.paused {
   opacity: 1;
   display: block;
   transition: all 0.2s ease-in-out;
 }
-.heroSection_videoSlide__playbutton svg {
+.playbutton svg {
   transition: all 0.2s ease-in-out;
 }
-.heroSection_videoSlide__playbutton:hover svg {
+.playbutton:hover svg {
   transform: scale(0.9);
 }
-.heroSection_videoSlide__playbutton:active svg {
+.playbutton:active svg {
   transform: rotate(10deg);
+}
+
+.heroSection {
+  /* Custom styles */
+}
+.heroSection_videoSlide {
+  width: 100%;
+  cursor: pointer;
+  height: 100vh;
 }
 .heroSection_videoSlide__overlay {
   position: absolute;
