@@ -62,6 +62,61 @@
  * @param {string} $name - the breakpoint name (xs, sm, md, lg, xl)
  * @param {map} $breakpoints - the breakpoints map (optional)
  */
+.hnz-btn {
+  transition: all 0.2s ease-in-out;
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 5px;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  line-height: normal;
+  border: solid 1px #fff;
+  color: #fff;
+  gap: 8px;
+  font-size: 1rem;
+}
+.hnz-btn svg {
+  transition: all 0.2s ease-in-out;
+}
+.hnz-btn:hover, .hnz-btn:active, .hnz-btn:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.hnz-btn:hover svg, .hnz-btn:active svg, .hnz-btn:focus svg {
+  transform: scale(120%);
+}
+.hnz-btn--gototop {
+  position: fixed;
+  bottom: 2rem;
+  opacity: 0;
+  display: none;
+  height: 45px;
+  width: 45px;
+  right: 2rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  padding: 10px;
+}
+.hnz-btn--gototop svg {
+  height: 20px;
+  width: 20px;
+}
+.hnz-btn--rounded {
+  border-radius: 24px;
+}
+.hnz-btn--no-border {
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  color: #fff;
+}
+.hnz-btn--no-border:hover, .hnz-btn--no-border:active, .hnz-btn--no-border:focus {
+  background-color: transparent;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -196,6 +251,8 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   text-transform: uppercase;
   margin-bottom: 60px;
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   text-transform: capitalize;
 }
 .sectionTitle.underline::after {
@@ -348,9 +405,9 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
 }
 .latestNews__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-  grid-column-gap: 25px;
-  grid-row-gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  grid-column-gap: 35px;
+  grid-row-gap: 35px;
   grid-auto-flow: dense;
   justify-content: center;
   align-items: center;
@@ -370,6 +427,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   transform: scale(1.1);
 }
 .latestNews__item__image {
+  aspect-ratio: 3/2;
   overflow: hidden;
   object-fit: cover;
   object-position: center center;
@@ -399,14 +457,15 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   margin-top: 15px;
 }
 .latestNews__item__content__date {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 500;
   line-height: normal;
   color: #fff;
 }
 .latestNews__item__content__title {
-  font-size: 18px;
+  font-size: 1.1rem;
+  margin: 0;
   line-height: 28px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 400;
@@ -586,6 +645,7 @@ nav .navbar-toggler:hover, nav .navbar-toggler:active, nav .navbar-toggler:focus
   text-align: center;
 }
 .ourStorySection__content {
+  margin-bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;

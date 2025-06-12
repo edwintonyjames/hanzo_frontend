@@ -23,6 +23,69 @@ $section-padding:120px 0px;
   align-items: center;
   justify-content: center;
 }
+@mixin transition($props...){ 
+  transition: $props;
+}
+
+.hnz-btn{
+  @include transition(all 0.2s ease-in-out);
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 5px;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  line-height: normal;
+  border: solid 1px $text-color;
+  color: $text-color;
+  gap: 8px;
+  font-size: 1rem;
+  svg{
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover,
+  &:active,
+  &:focus{
+    background: rgba($text-color, 0.1);
+    color: $text-color;
+    svg{
+      transform: scale(120%);
+    }
+  }
+  &--gototop{
+    position: fixed;
+    bottom: 2rem;
+    opacity: 0;
+    display: none;
+    height: 45px;
+    width: 45px;
+    right: 2rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    padding: 10px;
+    svg{
+      height: 20px;
+      width:20px;
+    }
+  }
+  &--rounded{
+    border-radius: 24px;
+  }
+  &--no-border{
+    font-size: 1.2rem;
+    border: none;
+    background: none;
+    color: $text-color;
+    &:hover,
+    &:active,
+    &:focus{
+      background-color: transparent;
+    }
+
+  }
+}
 
 @mixin grid-center {
   display: grid;
@@ -192,6 +255,8 @@ nav{
   @include fonts.sectionTitle;
   margin-bottom: 60px;
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   text-transform: capitalize;
   &.underline{
     &::after{
@@ -345,9 +410,9 @@ nav{
     padding: $section-padding;
     &__container{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-        grid-column-gap: 25px;
-        grid-row-gap: 25px;
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+        grid-column-gap: 35px;
+        grid-row-gap: 35px;
         grid-auto-flow: dense;
         justify-content: center;
         align-items: center;
@@ -367,7 +432,7 @@ nav{
         position: relative;
     }
     &__item__image{
-     
+      aspect-ratio: 3/2;
       overflow: hidden;
         object-fit: cover;
         object-position: center center;
@@ -397,14 +462,15 @@ nav{
         margin-top: 15px;
     }
     &__item__content__date{
-        font-size: 16px;
+        font-size:0.9rem;
         @include fonts.font-secondary;
         font-weight: 500;
         line-height: normal;
         color: $text-color;
     }
     &__item__content__title{
-        font-size: 18px;
+        font-size:1.1rem;
+        margin: 0;
         line-height: 28px;
         @include fonts.font-secondary;
         font-weight: 400;
@@ -544,7 +610,7 @@ nav{
           display: flex;
           justify-content: center;
           align-items: center;
-          flex-direction: column;
+          flex-direction: column; 
           color: $secondary-color;
           h3{
             z-index: 3;
@@ -596,8 +662,9 @@ nav{
 .ourStorySection{
   padding: $section-padding;
   text-align: center;
+
   &__content{
-    
+    margin-bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
