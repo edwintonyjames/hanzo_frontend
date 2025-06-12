@@ -70,10 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const iframe = container.querySelector(iframeSelector);
       const playBtn = container.querySelector(playBtnSelector);
+      if (!iframe || !playBtn) return;
       iframe.style.pointerEvents = 'none';
       playBtn.style.pointerEvents = 'auto';
-      if (!iframe || !playBtn) return;
-  
       const player = new Vimeo.Player(iframe);
       let isPlaying = false;
    
@@ -87,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       player.on('pause', () => { isPlaying = false; });
   
       container.addEventListener('click', (e) => {
-        console.log('e');
         e.stopPropagation();
         togglePlay();
       });
@@ -96,6 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   //videoselection logic
-  
+
 
   
